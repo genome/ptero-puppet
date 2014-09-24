@@ -3,6 +3,7 @@ define ptero::web (
   $source,
   $revision,
   $app,
+  $host,
   $listen_port,
   $owner = 'www-data',
   $group = 'www-data',
@@ -53,7 +54,17 @@ define ptero::web (
   }
 
   nginx::resource::vhost { $title :
-    listen_port => $listen_port,
-    proxy       => "http://$title",
+    listen_port          => $listen_port,
+    proxy                => "http://$title",
+    use_default_location => false,
+  }
+
+  nginx::resource::location { $title:
+    index_files      => [],
+    location         => '/',
+    proxy            => "http://$title",
+    proxy_set_header => ["Host ${host}:${listen_port}"],
+    vhost            => $title,
+    notify           => Class['nginx::service'],
   }
 }

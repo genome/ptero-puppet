@@ -5,6 +5,7 @@ class ptero::petri::web {
     code_dir    => $ptero::params::petri::target_directory,
     source      => $ptero::params::petri::repo,
     revision    => $ptero::params::petri::tag,
+    host        => $ptero::params::petri::host,
     listen_port => $ptero::params::petri::port,
     app         => 'puppet:///modules/ptero/petri/app.py',
     environment => {
