@@ -41,6 +41,8 @@ class ptero::petri::orchestrator(
   $circus_environment = {
     'PTERO_PETRI_AMQP_HOST'                => $ptero::params::petri::rabbitmq_host,
     'PTERO_PETRI_AMQP_PORT'                => $ptero::params::petri::rabbitmq_port,
+    'PTERO_PETRI_AMQP_USERNAME'            => $ptero::params::petri::rabbitmq_username,
+    'PTERO_PETRI_AMQP_PASSWORD'            => $ptero::params::petri::rabbitmq_password,
     'PTERO_PETRI_AMQP_VHOST'               => $ptero::params::petri::rabbitmq_vhost,
     'PTERO_PETRI_AMQP_RETRY_DELAY'         => 2,
     'PTERO_PETRI_AMQP_CONNECTION_ATTEMPTS' => 10,
@@ -48,6 +50,7 @@ class ptero::petri::orchestrator(
     'PTERO_PETRI_AMQP_HEARTBEAT_INTERVAL'  => 600,
     'PTERO_PETRI_REDIS_HOST'               => $ptero::params::petri::redis_host,
     'PTERO_PETRI_REDIS_PORT'               => $ptero::params::petri::redis_port,
+    'PTERO_PETRI_REDIS_PASSWORD'           => $ptero::params::petri::redis_password,
     'PTERO_PETRI_HOST'                     => $ptero::params::petri::ip,
     'PTERO_PETRI_PORT'                     => $ptero::params::petri::port,
     'PYTHONPATH'                           => $code_dir,

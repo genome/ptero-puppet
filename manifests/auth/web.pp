@@ -5,6 +5,7 @@ class ptero::auth::web() {
     code_dir    => $ptero::params::auth::target_directory,
     source      => $ptero::params::auth::repo,
     revision    => $ptero::params::auth::tag,
+    host        => $ptero::params::auth::host,
     listen_port => $ptero::params::auth::port,
     app         => 'puppet:///modules/ptero/auth/app.py',
     environment => {

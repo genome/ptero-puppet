@@ -5,6 +5,7 @@ class ptero::shell_command::web() {
     code_dir    => $ptero::params::shell_command::target_directory,
     source      => $ptero::params::shell_command::repo,
     revision    => $ptero::params::shell_command::tag,
+    host        => $ptero::params::shell_command::host,
     listen_port => $ptero::params::shell_command::port,
     app         => 'puppet:///modules/ptero/shell-command/app.py',
     environment => {
