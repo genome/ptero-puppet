@@ -28,7 +28,7 @@ define ptero::code (
     }
   }
 
-  if ! defined("$title-extra-requirements") {
+  if ! defined(Exec["$title-extra-requirements"]) {
     exec {"$title-extra-requirements":
       command => "$title/virtualenv/bin/pip install librabbitmq hiredis",
       user    => $owner,
