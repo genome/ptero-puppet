@@ -1,1 +1,1 @@
-from ptero_shell_command_fork.api.wsgi import app
+from ptero_shell_command.api.wsgi import app
