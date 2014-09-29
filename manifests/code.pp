@@ -27,4 +27,13 @@ define ptero::code (
       subscribe    => Vcsrepo[$title],
     }
   }
+
+  if ! defined("$title-extra-requirements") {
+    exec {"$title-extra-requirements":
+      command => "$title/virtualenv/bin/pip install librabbitmq hiredis",
+      user    => $owner,
+      group   => $group,
+      require => Python::Virtualenv["$title/virtualenv"],
+    }
+  }
 }
