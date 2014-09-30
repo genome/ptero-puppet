@@ -51,7 +51,7 @@ class ptero::petri::orchestrator(
     'PTERO_PETRI_REDIS_HOST'               => $ptero::params::petri::redis_host,
     'PTERO_PETRI_REDIS_PORT'               => $ptero::params::petri::redis_port,
     'PTERO_PETRI_REDIS_PASSWORD'           => $ptero::params::petri::redis_password,
-    'PTERO_PETRI_HOST'                     => $ptero::params::petri::ip,
+    'PTERO_PETRI_HOST'                     => $ptero::params::petri::host,
     'PTERO_PETRI_PORT'                     => $ptero::params::petri::port,
     'PYTHONPATH'                           => $code_dir,
   }
