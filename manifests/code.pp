@@ -41,7 +41,7 @@ define ptero::code (
     exec {"$title-setup.py-develop":
       command => "$title/virtualenv/bin/python setup.py develop",
       cwd     => "$title",
-      onlyif  => "test -f $title/setup.py",
+      onlyif  => "/usr/bin/test -f $title/setup.py",
       user    => $owner,
       group   => $group,
       require => Python::Virtualenv["$title/virtualenv"],
