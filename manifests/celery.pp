@@ -8,6 +8,7 @@ define ptero::celery (
   $group  = 'celery',
 ) {
   $virtualenv = "$code_dir/virtualenv"
+  $celery_script = "$virtualenv/bin/celery"
 
   if ! defined(User[$owner]) {
     user {$owner:
