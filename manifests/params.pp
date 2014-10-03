@@ -1,6 +1,6 @@
 class ptero::params {
-  include ptero::params::auth
-  include ptero::params::petri
-  include ptero::params::shell_command
-  include ptero::params::workflow
+  require ptero::params::auth
+  require ptero::params::petri
+  require ptero::params::shell_command
+  require ptero::params::workflow
 }
