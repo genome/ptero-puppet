@@ -1,5 +1,5 @@
 class ptero() {
-  include ptero::params
+  require ptero::params
 
   class {'python':
     dev        => true,
