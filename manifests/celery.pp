@@ -69,7 +69,7 @@ define ptero::celery (
     ensure    => running,
     require   => [
       File["/etc/init.d/celeryd-$title"],
-      Python::Virtualenv[$virtualenv],
+      Ptero::Code[$code_dir],
       User[$owner],
       Group[$group],
     ],
