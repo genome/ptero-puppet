@@ -158,7 +158,7 @@ start_workers() {
     if [ ! -z "$CELERYD_ULIMIT" ]; then
         ulimit $CELERYD_ULIMIT
     fi
-    sudo -u "$CELERYD_USER" $CELERY_SCRIPT worker \
+    sudo -u "$CELERYD_USER" -E $CELERY_SCRIPT worker \
         --detach \
         --pidfile="$PID_FILE" \
         --logfile="$LOG_FILE" \
