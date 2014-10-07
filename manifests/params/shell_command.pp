@@ -20,4 +20,3 @@ class ptero::params::shell_command {
   $port = hiera('sc-port', 80)
   $url = "http://$host:$port"
 }
-
