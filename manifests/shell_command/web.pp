@@ -1,4 +1,4 @@
-class ptero::shell_command::web() {
+class ptero::shell_command::web {
   require ptero::params
 
   ptero::web{'shell-command':

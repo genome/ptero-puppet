@@ -1,4 +1,4 @@
-class ptero::auth::web() {
+class ptero::auth::web {
   require ptero::params
 
   ptero::web{'auth':

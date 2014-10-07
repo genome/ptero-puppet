@@ -20,4 +20,3 @@ class ptero::workflow::web {
     },
   }
 }
-
