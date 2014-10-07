@@ -1,4 +1,4 @@
-class ptero::shell_command::redis() {
+class ptero::shell_command::redis {
   require ptero::params
 
   redis::instance {'sc-redis':

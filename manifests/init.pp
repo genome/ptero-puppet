@@ -1,4 +1,4 @@
-class ptero() {
+class ptero {
   require ptero::params
 
   class {'python':

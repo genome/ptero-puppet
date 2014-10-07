@@ -1,4 +1,4 @@
-class ptero::petri::redis() {
+class ptero::petri::redis {
   require ptero::params
 
   redis::instance {'petri-redis':

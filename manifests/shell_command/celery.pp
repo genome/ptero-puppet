@@ -1,4 +1,4 @@
-class ptero::shell_command::celery() {
+class ptero::shell_command::celery {
   require ptero::params
 
   ptero::celery{'shell-command':
