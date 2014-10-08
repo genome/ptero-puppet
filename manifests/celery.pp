@@ -3,6 +3,7 @@ define ptero::celery (
   $source,
   $revision,
   $app,
+  $queue = undef,
   $environment = false,
   $owner  = 'celery',
   $group  = 'celery',
