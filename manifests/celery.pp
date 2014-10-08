@@ -4,6 +4,7 @@ define ptero::celery (
   $revision,
   $app,
   $queue = undef,
+  $concurrency = 1,
   $environment = false,
   $owner  = 'celery',
   $group  = 'celery',

@@ -165,6 +165,7 @@ start_workers() {
         --pidfile="$PID_FILE" \
         --logfile="$LOG_FILE" \
         --loglevel="$CELERYD_LOG_LEVEL" \
+        --concurrency=<%= @concurrency %> \
         $CELERY_APP_ARG \
         $CELERY_QUEUE_OPTION
 }
