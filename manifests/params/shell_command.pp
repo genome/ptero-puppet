@@ -19,4 +19,7 @@ class ptero::params::shell_command {
   $host = hiera('sc-host', $::ipaddress)
   $port = hiera('sc-port', 80)
   $url = "http://$host:$port"
+
+  $celery_fork_workers = hiera('sc-fork-workers', 2)
+  $celery_http_workers = hiera('sc-http-workers', 2)
 }
