@@ -14,6 +14,11 @@ class ptero::params::petri {
   $rabbitmq_full_user = "$rabbitmq_username@$rabbitmq_vhost"
   $rabbitmq_url = "amqp://$rabbitmq_username:$rabbitmq_password@$rabbitmq_host:$rabbitmq_port/$rabbitmq_vhost"
 
+  $redis_celery_host = hiera('petri-redis-celery-host', 'localhost')
+  $redis_celery_port = hiera('petri-redis-celery-port', 6379)
+  $redis_celery_password = hiera('petri-redis-celery-password', '')
+  $redis_celery_url = "redis://:$redis_password@$redis_host:$redis_port"
+
   $redis_host = hiera('petri-redis-host', 'localhost')
   $redis_port = hiera('petri-redis-port', 6379)
   $redis_password = hiera('petri-redis-password', '')
@@ -27,5 +32,5 @@ class ptero::params::petri {
   $port = hiera('petri-port', 80)
   $url = "http://$host:$port"
 
-  $num_orchestrators = hiera('petri-num-orchestrators', 1)
+  $celery_workers = hiera('petri-celery-workers', 1)
 }

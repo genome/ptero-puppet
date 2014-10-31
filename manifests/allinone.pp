@@ -50,7 +50,7 @@ class ptero::allinone {
       Class['ptero::petri::redis'],
     ],
   }
-  class {'ptero::petri::orchestrator':
+  class {'ptero::petri::celery':
     require => [
       Class['ptero::petri::rabbitmq'],
       Class['ptero::petri::redis'],
