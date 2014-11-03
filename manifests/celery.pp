@@ -47,26 +47,6 @@ define ptero::celery (
     ],
   }
 
-  if ! defined(File['/var/run/celery']) {
-    file {'/var/run/celery':
-      ensure  => 'directory',
-      owner   => 'root',
-      group   => $group,
-      mode    => '2775',
-      require => Group[$group],
-    }
-  }
-
-  if ! defined(File['/var/log/celery']) {
-    file {'/var/log/celery':
-      ensure  => 'directory',
-      owner   => 'root',
-      group   => $group,
-      mode    => '2775',
-      require => Group[$group],
-    }
-  }
-
   service {"celeryd-$title":
     ensure    => running,
     require   => [

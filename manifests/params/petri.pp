@@ -17,7 +17,7 @@ class ptero::params::petri {
   $redis_celery_host = hiera('petri-redis-celery-host', 'localhost')
   $redis_celery_port = hiera('petri-redis-celery-port', 6379)
   $redis_celery_password = hiera('petri-redis-celery-password', '')
-  $redis_celery_url = "redis://:$redis_password@$redis_host:$redis_port"
+  $redis_celery_url = "redis://:$redis_celery_password@$redis_celery_host:$redis_celery_port"
 
   $redis_host = hiera('petri-redis-host', 'localhost')
   $redis_port = hiera('petri-redis-port', 6379)
