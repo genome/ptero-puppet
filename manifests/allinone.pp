@@ -63,7 +63,15 @@ class ptero::allinone {
     user     => $ptero::params::workflow::database_username,
     password => $ptero::params::workflow::database_password,
   }
+  class {'ptero::workflow::rabbitmq': }
+  class {'ptero::workflow::redis': }
   class {'ptero::workflow::web':
     require => Postgresql::Server::Db[$ptero::params::workflow::database_name],
+  }
+  class {'ptero::workflow::celery':
+    require => [
+      Class['ptero::workflow::rabbitmq'],
+      Class['ptero::workflow::redis'],
+    ],
   }
 }
