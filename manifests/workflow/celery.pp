@@ -1,17 +1,18 @@
-class ptero::workflow::web {
+class ptero::workflow::celery {
   require ptero::params
 
-  ptero::web{'workflow':
+  ptero::celery{'workflow':
     code_dir    => $ptero::params::workflow::target_directory,
     source      => $ptero::params::workflow::repo,
     revision    => $ptero::params::workflow::tag,
-    host        => $ptero::params::workflow::host,
-    listen_port => $ptero::params::workflow::port,
-    app         => 'puppet:///modules/ptero/workflow/app.py',
-
+    app         => 'ptero_workflow.implementation.celery_app:app',
+    concurrency => $ptero::params::workflow::celery_workers,
     environment => {
       'CELERY_BROKER_URL'        => $ptero::params::workflow::rabbitmq_url,
       'CELERY_RESULT_BACKEND'    => $ptero::params::workflow::redis_url,
+      'PYTHONPATH'               => $ptero::params::workflow::target_directory,
+      'PTERO_PETRI_HOST'         => $ptero::params::petri::host,
+      'PTERO_PETRI_PORT'         => $ptero::params::petri::port,
       'PTERO_SHELL_COMMAND_HOST' => $ptero::params::shell_command::host,
       'PTERO_SHELL_COMMAND_PORT' => $ptero::params::shell_command::port,
       'PTERO_WORKFLOW_HOST'      => $ptero::params::workflow::host,
